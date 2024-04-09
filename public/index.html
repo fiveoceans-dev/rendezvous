@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <script lang="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="/simple-peer/simplepeer.min.js"></script>
+    <style>
+
+        body {
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            gap: 10px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .container-buttons {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+        }
+        .vid {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .settings {
+            background-color: #8565CB;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="videos" class="container">
+        <video id="localVideo" class="vid" autoplay muted></video>
+    </div>
+    <br />
+    <div class="container-buttons">
+        <button id="switchButton" class="settings" onclick="switchMedia()">Switch Camera</button>
+        <button id="muteButton" class="settings" onclick="toggleMute()">Unmuted</button>
+        <button id="vidButton" class="settings" onclick="toggleVid()">Video Enabled</button>
+    </div>
+</body>
+<footer>
+    <script src='/js/main.js' lang="text/javascript"></script>
+</footer>
+
+</html>
